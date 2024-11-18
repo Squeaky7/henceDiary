@@ -177,6 +177,14 @@ public class GameSys {
         System.out.println("\n______________________________________________________________\n");
 
         System.out.println("Phase at STP: " + detail.getPhaseSTP());
+        System.out.println("Color: " + (detail.getColor() != null ? detail.getColor() : "Colorless"));
+
+        System.out.println("\npH Index: " + (detail.getPhIndex() != null ? detail.getPhIndex() : "--") + " " + (detail.getPhDetail() != null ? detail.getPhDetail() : ""));
+
+        System.out.println("\nDensity: " + (detail.getDensity() != null ? detail.getDensity() + " " + detail.getDensityUnit() + (detail.getDensityEnv() != null ? " " + detail.getDensityEnv() : "") : "--"));
+        System.out.println("Melting Pt: " + (detail.getMeltPt() != null ? detail.getMeltPt() + "℃" : "--"));
+        
+
 
     }
 }
