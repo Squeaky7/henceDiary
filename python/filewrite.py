@@ -2,6 +2,7 @@ import datetime
 import os
 import json
 
+
 date = datetime.datetime.now()
 
 current_datetime = datetime.datetime.now().strftime('%Y-%m-%d_%H%M%S')
@@ -11,6 +12,10 @@ file_path = os.path.join("tests", "ThoughBuckets", f"{current_datetime}.txt")
 
 
 # print(os.getcwd())
+
+tagArray = []
+
+
 
 with open(file_path, 'w') as file:
     
@@ -22,6 +27,18 @@ with open(file_path, 'w') as file:
 
     user_input = input("Enter text: ")
 
-    file.write(f"Date: {datetime.datetime.now()}\nTitle: {title}\n{user_input}")
+    tagTF = input("Do you want tag?[y/N]: ")
+
+    if tagTF == "y":
+        tagEnter = True
+        while tagEnter:
+            tags = input("Enter tag (Enter \"q\" to finish): ")
+            tagArray.append(tags)
+            if tags == "q":
+                break
+
+    file.write(f"Datetime: {datetime.datetime.now()}\n\nTag: \nTitle: {title}\n{user_input}")
+
+
 
 
