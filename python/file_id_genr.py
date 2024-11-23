@@ -10,6 +10,8 @@ def fileIdGenerator(digit):
         file_id += returnChar(char)
         nowDigit += 1
 
+    return file_id
+
 def returnChar(i):
     if i == 1:
         return "1"
