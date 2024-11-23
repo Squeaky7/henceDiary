@@ -1,7 +1,7 @@
 import datetime
 import os
 import json
-
+import file_id_genr as fileid
 
 date = datetime.datetime.now()
 
@@ -33,11 +33,20 @@ with open(file_path, 'w') as file:
         tagEnter = True
         while tagEnter:
             tags = input("Enter tag (Enter \"q\" to finish): ")
-            tagArray.append(tags)
+            
             if tags == "q":
                 break
+            
+            tagArray.append(tags)
+    
+    tag_save = ""
+    for i in range(len(tagArray)):
+        tag_save += f"#{tagArray[i]} "
+    print(f"Formatted tags for saving: {tag_save}")
 
-    file.write(f"Datetime: {datetime.datetime.now()}\n\nTag: \nTitle: {title}\n{user_input}")
+    file_id = fileid.fileIdGenerator(16)
+
+    file.write(f"Datetime: {current_datetime}\nFile ID: {file_id}\nTag: {tag_save}\nTitle: {title}\n{user_input}")
 
 
 
